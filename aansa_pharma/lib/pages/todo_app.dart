@@ -26,7 +26,7 @@ class _TodoAppState extends State<TodoApp> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(greetMessage),
+          Text(greetMessage, textScaleFactor: 3),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
