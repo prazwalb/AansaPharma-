@@ -13,7 +13,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     Future.delayed(Duration(seconds: 3), () {
       if (mounted) {
-        context.goNamed('onbord');
+        context.goNamed('onboard');
       }
     });
 
