@@ -16,27 +16,27 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   final List<OnboardingPage> _pages = [
     OnboardingPage(
       image:
-          'https://images.pexels.com/photos/29874925/pexels-photo-29874925/free-photo-of-hiker-in-the-dolomites-at-sunrise.jpeg',
-      title: 'Life is short and the world is ',
-      highlightedWord: 'wide',
+          'https://images.pexels.com/photos/19471013/pexels-photo-19471013/free-photo-of-young-pharmacist-in-drugstore.jpeg?auto=compress&cs=tinysrgb&w=300',
+      title: 'Pharmacy in your ',
+      highlightedWord: 'pocket',
       description:
           'At Friends tours and travel, we customize reliable and trustworthy educational tours to destinations all over the world',
       buttonText: 'Get Started',
     ),
     OnboardingPage(
       image:
-          'https://images.pexels.com/photos/2265876/pexels-photo-2265876.jpeg?auto=compress&cs=tinysrgb&w=600',
-      title: "It's a big world out there go ",
-      highlightedWord: 'explore',
+          'https://images.pexels.com/photos/5712682/pexels-photo-5712682.jpeg',
+      title: "Manage all your ",
+      highlightedWord: 'medication',
       description:
           'To get the best of your adventure you just need to leave and go where you like, we are waiting for you',
       buttonText: 'Next',
     ),
     OnboardingPage(
       image:
-          'https://images.pexels.com/photos/2531237/pexels-photo-2531237.jpeg?auto=compress&cs=tinysrgb&w=600',
-      title: "People don't take trips, trips take ",
-      highlightedWord: 'people',
+          'https://images.pexels.com/photos/4989149/pexels-photo-4989149.jpeg?auto=compress&cs=tinysrgb&w=300',
+      title: "Connect easily with ",
+      highlightedWord: 'pharmacist',
       description:
           'To get the best of your adventure you just need to leave and go where you like, we are waiting for you',
       buttonText: 'Next',
@@ -67,6 +67,24 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        actions: [
+          TextButton(
+            onPressed: () => context.goNamed('name'),
+            child: RichText(
+              textScaleFactor: 1.5,
+              text: TextSpan(
+                text: 'skip',
+                style: const TextStyle(
+                  color: Colors.orange,
+                  fontStyle: FontStyle.italic,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
       body: Stack(
         children: [
           PageView.builder(
@@ -87,6 +105,17 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             right: 0,
             child: Column(
               children: [
+                SmoothPageIndicator(
+                  controller: _pageController,
+                  count: _pages.length,
+                  effect: const SwapEffect(
+                    dotHeight: 6,
+                    dotWidth: 6,
+                    activeDotColor: Colors.blue,
+                    dotColor: Colors.grey,
+                  ),
+                ),
+                SizedBox(height: 20),
                 // Next Button
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -105,18 +134,18 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 20),
-                // Page Indicator
-                SmoothPageIndicator(
-                  controller: _pageController,
-                  count: _pages.length,
-                  effect: const SwapEffect(
-                    dotHeight: 6,
-                    dotWidth: 6,
-                    activeDotColor: Colors.blue,
-                    dotColor: Colors.grey,
-                  ),
-                ),
+                // const SizedBox(height: 20),
+                // // Page Indicator
+                // SmoothPageIndicator(
+                //   controller: _pageController,
+                //   count: _pages.length,
+                //   effect: const SwapEffect(
+                //     dotHeight: 6,
+                //     dotWidth: 6,
+                //     activeDotColor: Colors.blue,
+                //     dotColor: Colors.grey,
+                //   ),
+                // ),
               ],
             ),
           ),
@@ -137,6 +166,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             ),
           ),
           const SizedBox(height: 40),
+
           RichText(
             textAlign: TextAlign.center,
             text: TextSpan(
