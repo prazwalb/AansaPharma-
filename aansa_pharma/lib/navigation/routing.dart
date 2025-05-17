@@ -1,5 +1,5 @@
-import 'package:aasma_pharma/pages/onboarding_screen/onboarding_screen.dart';
-import 'package:aasma_pharma/pages/splash_screen/splash_screen.dart';
+import 'package:aasma_pharma/pages/onboarding_screen.dart';
+import 'package:aasma_pharma/pages/splash_screen.dart';
 import 'package:aasma_pharma/pages/todo_app.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';

@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -23,20 +25,28 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue[400],
+      backgroundColor: Color(0xffAAC4FF),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               'Aansa',
+              textScaleFactor: 1.8,
               style: TextStyle(
                 fontFeatures: [FontFeature.enable('onum')],
                 fontStyle: FontStyle.italic,
               ),
             ),
-            Icon(Icons.health_and_safety_outlined),
-            Text('Phaarma'),
+            Image.asset('image/logo.png', cacheHeight: 90),
+            Text(
+              'Phaarma',
+              textScaleFactor: 1.8,
+              style: TextStyle(
+                fontFeatures: [FontFeature.enable('onum')],
+                fontStyle: FontStyle.italic,
+              ),
+            ),
           ],
         ),
       ),
