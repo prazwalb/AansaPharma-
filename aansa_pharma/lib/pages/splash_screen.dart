@@ -25,6 +25,9 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //0xff is the prefix of every hex colour
+      //now replacing it with a hex color #AAC4FF
+      //we remove the # from the hex color
       backgroundColor: Color(0xffAAC4FF),
       body: Center(
         child: Column(

@@ -15,8 +15,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   final List<OnboardingPage> _pages = [
     OnboardingPage(
-      image:
-          'https://images.pexels.com/photos/19471013/pexels-photo-19471013/free-photo-of-young-pharmacist-in-drugstore.jpeg?auto=compress&cs=tinysrgb&w=300',
+      image: 'image/splashcover1.png',
       title: 'Pharmacy in your ',
       highlightedWord: 'pocket',
       description:
@@ -24,8 +23,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       buttonText: 'Get Started',
     ),
     OnboardingPage(
-      image:
-          'https://images.pexels.com/photos/5712682/pexels-photo-5712682.jpeg',
+      image: 'image/splashcover2.png',
       title: "Manage all your ",
       highlightedWord: 'medication',
       description:
@@ -33,8 +31,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       buttonText: 'Next',
     ),
     OnboardingPage(
-      image:
-          'https://images.pexels.com/photos/4989149/pexels-photo-4989149.jpeg?auto=compress&cs=tinysrgb&w=300',
+      image: 'image/splashcover3.png',
       title: "Connect easily with ",
       highlightedWord: 'pharmacist',
       description:
@@ -58,7 +55,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     } else if (_currentPage <= _pages.length) {
       // Navigate to home screen or next screen
 
-      return context.goNamed('signin');
+      return context.goNamed('login');
     } else {
       debugPrint('print to home screen');
     }
@@ -68,10 +65,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: Image.asset('image/logo.png'),
         automaticallyImplyLeading: false,
         actions: [
           TextButton(
-            onPressed: () => context.goNamed('name'),
+            onPressed: () => context.goNamed('login'),
             child: RichText(
               textScaleFactor: 1.5,
               text: TextSpan(
@@ -162,7 +160,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           Expanded(
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
-              child: Image.network(page.image, fit: BoxFit.cover),
+              child: Image.asset(page.image, fit: BoxFit.cover),
             ),
           ),
           const SizedBox(height: 40),
