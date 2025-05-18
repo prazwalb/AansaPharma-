@@ -29,6 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
       //now replacing it with a hex color #AAC4FF
       //we remove the # from the hex color
       backgroundColor: Color(0xffAAC4FF),
+
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
