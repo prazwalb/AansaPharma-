@@ -6,6 +6,8 @@ class Loginpage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Color(0xffAAC4FF),
       extendBody: true,
@@ -46,9 +48,45 @@ class Loginpage extends StatelessWidget {
             ),
           ),
           Container(
+            height: screenHeight * 0.6,
+            width: screenWidth * 0.8,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(67),
+              color: Colors.grey,
+            ),
             margin: EdgeInsets.all(15),
-            color: Colors.red,
-            child: Column(children: [TextField()]),
+
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    'Fill the credentials blow,',
+                    textScaleFactor: 1.5,
+                    style: TextStyle(
+                      fontStyle: FontStyle.italic,
+                      fontWeight: FontWeight.w900,
+                    ),
+                  ),
+                ),
+                Divider(),
+
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextField(
+                    controller: TextEditingController(),
+                    autofillHints: ['Enter your name'],
+                    decoration: InputDecoration(
+                      suffixIcon: Icon(Icons.person_2_sharp),
+                      hintText: 'enter your name',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
