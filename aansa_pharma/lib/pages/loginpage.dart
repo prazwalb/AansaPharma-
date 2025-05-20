@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:go_router/go_router.dart';
 
-class Loginpage extends StatelessWidget {
+class Loginpage extends StatefulWidget {
   const Loginpage({super.key});
+
+  @override
+  State<Loginpage> createState() => _LoginpageState();
+}
+
+class _LoginpageState extends State<Loginpage> {
+  final _formkey = GlobalKey<FormState>();
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  bool ispassword = false;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +42,7 @@ class Loginpage extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "Logine to continue",
+                      "Login to continue",
 
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
@@ -47,15 +57,9 @@ class Loginpage extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            height: screenHeight * 0.6,
-            width: screenWidth * 0.8,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(67),
-              color: Colors.grey,
-            ),
-            margin: EdgeInsets.all(15),
-
+          const SizedBox(height: 10),
+          Form(
+            key: _formkey,
             child: Column(
               children: [
                 Padding(
@@ -69,21 +73,37 @@ class Loginpage extends StatelessWidget {
                     ),
                   ),
                 ),
-                Divider(),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Divider(color: Colors.black),
+                ),
 
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: TextField(
-                    controller: TextEditingController(),
-                    autofillHints: ['Enter your name'],
+                  child: TextFormField(
+                    controller: _emailController,
+                    keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
-                      suffixIcon: Icon(Icons.person_2_sharp),
-                      hintText: 'enter your name',
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(30),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      hintText: "Enter your email address",
+                      suffixIcon: IconButton(
+                        onPressed: () => _emailController.clear(),
+                        icon: Icon(Icons.person_3_outlined),
                       ),
                     ),
                   ),
+                ),
+                TextFormField(
+                  controller: _passwordController,
+                  keyboardType: TextInputType.visiblePassword,
+                  obscureText: !ispassword,
+                ),
+
+                IconButton(
+                  onPressed: () => context.goNamed('example'),
+                  icon: Icon(Icons.navigate_next_sharp),
                 ),
               ],
             ),

@@ -71,7 +71,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           TextButton(
             onPressed: () => context.goNamed('login'),
             child: RichText(
-              textScaleFactor: 1.5,
               text: TextSpan(
                 text: 'skip',
                 style: const TextStyle(
@@ -79,6 +78,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   fontStyle: FontStyle.italic,
                 ),
               ),
+              textScaler: TextScaler.linear(1.5),
             ),
           ),
         ],

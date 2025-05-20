@@ -16,7 +16,7 @@ class _TodoAppState extends State<TodoApp> {
   void greetUser() {
     String username = myController.text;
     setState(() {
-      greetMessage = "hello" + username;
+      greetMessage = "hello$username";
     });
   }
 

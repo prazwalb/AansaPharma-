@@ -1,3 +1,4 @@
+import 'package:aasma_pharma/pages/homepage.dart';
 import 'package:aasma_pharma/pages/loginpage.dart';
 import 'package:aasma_pharma/pages/onboarding_screen.dart';
 import 'package:aasma_pharma/pages/splash_screen.dart';
@@ -30,10 +31,15 @@ final GoRouter router = GoRouter(
       name: 'login',
       builder: (context, state) => Loginpage(),
     ),
+    // GoRoute(
+    //   path: '/todo',
+    //   name: 'todo',
+    //   builder: (context, state) => TodoApp(),
+    // ),
     GoRoute(
-      path: '/todo',
-      name: 'todo',
-      builder: (context, state) => TodoApp(),
+      path: '/example',
+      name: 'example',
+      builder: (context, state) => MyHomePage(),
     ),
   ],
 );
