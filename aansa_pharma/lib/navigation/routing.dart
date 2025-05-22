@@ -2,7 +2,6 @@ import 'package:aasma_pharma/pages/homepage.dart';
 import 'package:aasma_pharma/pages/loginpage.dart';
 import 'package:aasma_pharma/pages/onboarding_screen.dart';
 import 'package:aasma_pharma/pages/splash_screen.dart';
-import 'package:aasma_pharma/pages/todo_app.dart';
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 

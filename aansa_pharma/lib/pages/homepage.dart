@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -65,12 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       style: TextStyle(fontSize: 18),
                     ),
                     SizedBox(height: 20),
-                    ElevatedButton(
-                      onPressed: () {
-                        setState(() {});
-                      },
-                      child: Text('Click me'),
-                    ),
+                    ElevatedButton(onPressed: () {}, child: Text('Click me')),
                     SizedBox(height: 20),
                     Text(
                       'This is another text widget, displayed on top of the background image.',
